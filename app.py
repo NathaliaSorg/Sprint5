@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+st.header('Interativo analise de carros')
 
 car_data = pd.read_csv('vehicles.csv')  # lendo os dados
 hist_button = st.button('Criar histograma') # criar um botão
@@ -15,10 +16,13 @@ if hist_button: # se o botão for clicado
     # exibir um gráfico Plotly interativo
     st.plotly_chart(fig, use_container_width=True)
 
-build_histogram = st.checkbox('Criar um histograma')
+build_scatter = st.checkbox('Criar um gráfico de dispersão')
 
-if build_histogram: # se a caixa de seleção for selecionada
-    st.write('Criando um histograma para a coluna odometer')
+if build_acatter: # se a caixa de seleção for selecionada
+    st.write('Criando um gráfico de dispersão')
+
+    fig = px.scatter(car_data, x="odometer", y="price") # criar um gráfico de dispersão
+    fig.show()
     
 
 
