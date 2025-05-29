@@ -22,7 +22,7 @@ if build_scatter: # se a caixa de seleção for selecionada
     st.write('Criando um gráfico de dispersão')
 
     fig = px.scatter(car_data, x="odometer", y="price") # criar um gráfico de dispersão
-    fig.show()
+    st.plotly_chart(fig, use_container_width=True)
     
 
 
