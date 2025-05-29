@@ -18,7 +18,7 @@ if hist_button: # se o botão for clicado
 
 build_scatter = st.checkbox('Criar um gráfico de dispersão')
 
-if build_acatter: # se a caixa de seleção for selecionada
+if build_scatter: # se a caixa de seleção for selecionada
     st.write('Criando um gráfico de dispersão')
 
     fig = px.scatter(car_data, x="odometer", y="price") # criar um gráfico de dispersão
